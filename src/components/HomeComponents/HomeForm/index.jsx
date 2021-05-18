@@ -27,13 +27,16 @@ const HomeForm = () => {
 
   const handleChange = ({ name, value }) => {
     setFormStateHome({
+      ...formStateHome,
       [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("se ejecuto form");
     const errorFormHome = validated(formStateHome, FormHomeValidation);
+    console.log(errorFormHome);
     setErrors(errorFormHome);
     if (!Object.keys(errorFormHome).length > 0) {
       console.log(formStateHome);
@@ -43,17 +46,19 @@ const HomeForm = () => {
   return (
     <div className="boxForm">
       <form onSubmit={handleSubmit}>
-        <h2>Déjanos tus datos</h2>
-        <ButtonDropdown
-          variant="outline"
-          title="DNI"
-          name="dni"
-          onChange={handleChange}
-          value={formStateHome.dni}
-          options={options}
-          errors={errors}
-          placeholder="Nro. de doc"
-        />
+        <h2 className="boxForm__title">Déjanos tus datos</h2>
+        <div className="boxForm__dropdown">
+          <ButtonDropdown
+            variant="outline"
+            title="DNI"
+            name="dni"
+            onChange={handleChange}
+            value={formStateHome.dni}
+            options={options}
+            errors={errors}
+            placeholder="Nro. de doc"
+          />
+        </div>
         <InputText
           placeholder="Celular"
           type="number"
@@ -62,14 +67,16 @@ const HomeForm = () => {
           value={formStateHome.cellphone}
           errors={errors}
         />
-        <InputText
-          placeholder="Placa"
-          type="text"
-          name="licensePlate"
-          onChange={handleChange}
-          value={formStateHome.licensePlate}
-          errors={errors}
-        />
+        <div className="boxForm__inputs">
+          <InputText
+            placeholder="Placa"
+            type="text"
+            name="licensePlate"
+            onChange={handleChange}
+            value={formStateHome.licensePlate}
+            errors={errors}
+          />
+        </div>
         <div className="boxForm__checkbox_container">
           <Form.Check
             type="checkbox"

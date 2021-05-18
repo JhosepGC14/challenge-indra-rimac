@@ -1,7 +1,13 @@
 .containerHome {
   display: flex;
+  height: 100vh;
   .containerHome__BoxImage {
+    & img {
+      height: 100%;
+    }
   }
   .containerHome__BoxForm {
+    width: 288px;
+    margin: auto;
   }
 }

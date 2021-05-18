@@ -13,7 +13,6 @@ export const FormHomeValidation = {
   },
 
   typeDocument: {
-    required: true,
     type: "comboBox",
   },
   cellphone: {

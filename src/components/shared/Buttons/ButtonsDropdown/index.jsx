@@ -50,9 +50,11 @@ const ButtonDropdown = ({
           isInvalid={errors[name] ? true : false}
           placeholder={placeholder}
         />
-        <Form.Control.Feedback type="invalid">
-          {errors[name] && `${errors[name]}`}
-        </Form.Control.Feedback>
+        {errors[name] && (
+          <Form.Control.Feedback type="invalid">
+            {errors[name] && `${errors[name]}`}
+          </Form.Control.Feedback>
+        )}
       </InputGroup>
     </>
   );

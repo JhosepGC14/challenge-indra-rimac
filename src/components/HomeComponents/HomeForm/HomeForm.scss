@@ -8,11 +8,40 @@
   }
 }
 
+.boxForm__title {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.2px;
+  color: #494f66;
+  margin-bottom: 24px;
+}
+
+.boxForm__dropdown {
+  margin-bottom: 24px;
+}
+
+.boxForm__inputs {
+  margin-bottom: 8px;
+}
+
+.boxForm__checkbox_container {
+  display: flex;
+  margin-bottom: 40px;
+}
+
 .boxForm__terms {
+  display: inline-block;
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 0.2px;
   color: #676f8f;
+  margin-left: 12px;
+  & u {
+    font-weight: 500;
+  }
 }

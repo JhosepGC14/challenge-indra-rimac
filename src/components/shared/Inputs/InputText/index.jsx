@@ -9,7 +9,6 @@ const InputText = ({
   onChange,
   type = "text",
   size = "lg",
-  label,
   placeholder,
 }) => {
   const handleChange = ({ target }) => {
@@ -19,7 +18,6 @@ const InputText = ({
   return (
     <>
       <Form.Group controlId="formBasicEmail">
-        {label && <Form.Label>{label}</Form.Label>}
         <Form.Control
           type={type}
           size={size}
