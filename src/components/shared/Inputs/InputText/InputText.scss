@@ -1,0 +1,7 @@
+.input_custom {
+  height: 56px !important;
+  font-size: 16px !important;
+  &::placeholder {
+    color: #a3abcc;
+  }
+}

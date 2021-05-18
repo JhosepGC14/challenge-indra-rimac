@@ -1,0 +1,18 @@
+.custom-control-input {
+  width: 20px !important;
+  height: 20px !important;
+  &:checked ~ .custom-control-label::before {
+    background: #43b748 !important;
+    border-radius: 4px !important;
+    border-color: #43b748 !important;
+  }
+}
+
+.boxForm__terms {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #676f8f;
+}
