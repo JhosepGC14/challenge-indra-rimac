@@ -5,4 +5,8 @@
   font-size: 14px !important;
   line-height: 16px !important;
   padding: 20px 42px !important;
+  border-radius: 8px !important;
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }

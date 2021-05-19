@@ -16,6 +16,7 @@ const HomeForm = () => {
   const { validated } = useValidate();
   const [formStateHome, setFormStateHome] = useState(FormHome);
   const [errors, setErrors] = useState(FormHome);
+  //eslint-disable-next-line
   const [options, setOptions] = useState([
     {
       name: "DNI",
