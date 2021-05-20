@@ -3,9 +3,9 @@ import "./HeaderHome.scss";
 import Logo from "../../../assets/images/home/logo_rimac.svg";
 import IconPhone from "../../../assets/images/home/icon_phone.svg";
 
-const HeaderHome = () => {
+const HeaderHome = ({ principal = false }) => {
   return (
-    <header className="header">
+    <header className={principal ? "header" : "header principal"}>
       <div className="header__containerGeneral">
         <div className="header__containerLogo">
           <img

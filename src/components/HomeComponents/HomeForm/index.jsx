@@ -10,6 +10,7 @@ import ButtonDropdown from "../../shared/Buttons/ButtonsDropdown";
 import InputText from "../../shared/Inputs/InputText";
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
 import useValidate from "../../../utils/validations";
+import { useHistory } from "react-router-dom";
 
 const HomeForm = () => {
   //validations
@@ -26,6 +27,8 @@ const HomeForm = () => {
     },
   ]);
 
+  const router = useHistory();
+
   const handleChange = ({ name, value }) => {
     setFormStateHome({
       ...formStateHome,
@@ -41,6 +44,7 @@ const HomeForm = () => {
     setErrors(errorFormHome);
     if (!Object.keys(errorFormHome).length > 0) {
       console.log(formStateHome);
+      router.push("/detalle-vehicular");
     }
   };
 

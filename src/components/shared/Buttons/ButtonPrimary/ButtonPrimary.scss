@@ -6,7 +6,14 @@
   line-height: 16px !important;
   padding: 20px 42px !important;
   border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+
   @media (max-width: 480px) {
     width: 100%;
+  }
+
+  .icon_buton {
+    margin-left: 10px;
   }
 }
