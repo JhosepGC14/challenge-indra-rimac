@@ -1,0 +1,124 @@
+.nav-tabs {
+  border-bottom: none;
+}
+
+.containerAccordion {
+  margin-top: 32px;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  width: 128px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ef3340;
+  background-color: #fff;
+  border-color: #fff #fff #fff;
+  border-bottom: 2px solid #ef3340 !important;
+  padding-bottom: 24px;
+}
+
+.nav-tabs .nav-link {
+  width: 128px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #494f66;
+  background-color: #fff;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #dee2e6;
+  &:hover {
+    color: #ef3340;
+    border-color: #fff;
+    border-bottom: 2px solid #dee2e6;
+  }
+}
+
+.headerAccordion {
+  width: 384px;
+  display: flex;
+  margin: 20px 0px;
+
+  .headerAccordion__imgSection {
+    flex: 1 1 20%;
+  }
+
+  .headerAccordion__content {
+    flex: 1 1 60%;
+
+    .headerAccordion__content__title {
+      display: inline-block;
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 28px;
+      color: #494f66;
+      margin-bottom: 12px;
+    }
+
+    .button_add_remove {
+      & img {
+        margin-right: 12px;
+      }
+      & span {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: #6f7dff;
+      }
+    }
+  }
+
+  .headerAccordion__boxArrow {
+    flex: 1 1 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    .headerAccordion__notexpanded {
+      transition: all ease 0.5s;
+      transform: rotate(180deg);
+    }
+    .headerAccordion__expanded {
+      transition: all ease 0.5s;
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.textDescriptionItem {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #676f8f;
+  padding-left: 20%;
+}
+
+.accordion_body {
+  width: 384px;
+}
+
+.containerPlans__divider {
+  width: 384px;
+  background: #e4e8f7;
+  opacity: 1;
+  border: none;
+}

@@ -3,7 +3,6 @@ import "./DetallesForm.scss";
 import ButtonRadio from "../../shared/Buttons/ButtonRadio";
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
 import InputSelect from "../../shared/Inputs/InputSelect";
-import IconBack from "../../../assets/images/detalles/icon_back.svg";
 import IconCar from "../../../assets/images/detalles/icon_car.svg";
 import Counter from "../Counter";
 import useValidate from "../../../utils/validations";
@@ -12,6 +11,7 @@ import {
   detallesFormValidation,
 } from "../../../widgets/detalles/store/state";
 import { useHistory } from "react-router";
+import ButtonBack from "../../shared/Buttons/ButtonBack";
 
 const DetallesForm = () => {
   //validations
@@ -81,10 +81,7 @@ const DetallesForm = () => {
   return (
     <div className="containerGeneralForm">
       <form onSubmit={handleSubmit}>
-        <div className="containerGeneralForm__buttonBack">
-          <img src={IconBack} alt="icon back" />
-          <span>VOLVER</span>
-        </div>
+        <ButtonBack />
         <h2 className="containerGeneralForm__titleForm">
           ¡Hola, <span>Juan!</span>
         </h2>

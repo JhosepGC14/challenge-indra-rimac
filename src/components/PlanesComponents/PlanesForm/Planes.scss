@@ -1,0 +1,28 @@
+.containerGeneralPlans {
+  padding: 0px 30px 96px 96px;
+
+  .containerGeneralPlans__title {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.6px;
+    color: #494f66;
+  }
+
+  .containerGeneralPlans__subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    color: #676f8f;
+    display: inline-block;
+    margin-bottom: 34px;
+  }
+
+  .containerGeneralPlans__contentUser {
+    margin-bottom: 64px;
+  }
+}
