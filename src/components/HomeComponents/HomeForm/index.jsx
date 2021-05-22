@@ -11,6 +11,7 @@ import InputText from "../../shared/Inputs/InputText";
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
 import useValidate from "../../../utils/validations";
 import { useHistory } from "react-router-dom";
+import RimacApi from "../../../infrastructure/services/RimacServices";
 
 const HomeForm = () => {
   //validations
@@ -38,13 +39,23 @@ const HomeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("se ejecuto form");
     const errorFormHome = validated(formStateHome, FormHomeValidation);
-    console.log(errorFormHome);
     setErrors(errorFormHome);
     if (!Object.keys(errorFormHome).length > 0) {
-      console.log(formStateHome);
-      router.push("/detalle-vehicular");
+      getDataUser(formStateHome);
+    }
+  };
+
+  const getDataUser = async (filter) => {
+    try {
+      let response = await RimacApi.getDataUser(filter);
+      if (response?.length !== 0) {
+        router.push(`/detalle-vehicular/${response[0].id}`);
+      } else {
+        //TODO que hacer cuando no está registrado?
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 

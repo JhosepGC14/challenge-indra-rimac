@@ -13,18 +13,10 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route exact path="/detalle-vehicular">
-            <DetalleVehicularPage />
-          </Route>
-          <Route exact path="/planes-cobertura">
-            <PlanesPage />
-          </Route>
-          <Route exact path="/despedida">
-            <DespedidaPage />
-          </Route>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/detalle-vehicular/:id" component={DetalleVehicularPage} />
+          <Route exact path="/planes-cobertura/:id" component={PlanesPage} />
+          <Route exact path="/despedida" component={DespedidaPage} />
         </Switch>
       </Router>
     </>
