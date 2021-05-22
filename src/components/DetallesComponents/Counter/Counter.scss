@@ -1,0 +1,42 @@
+.boxCounter {
+  width: 160px;
+  min-height: 56px;
+  border: 1px solid #c5cbe0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+
+  .boxCounter__btnRemove {
+    width: 45px;
+    min-height: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 8px 0px 0px 8px;
+
+    &:hover {
+      background: #f7f8fc;
+    }
+  }
+
+  .boxCounter__amount {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    vertical-align: middle;
+    letter-spacing: 0.2px;
+    color: #494f66;
+    line-height: 56px;
+  }
+
+  .boxCounter__btnAdd {
+    width: 45px;
+    min-height: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 0px 8px 8px 0px;
+    &:hover {
+      background: #f7f8fc;
+    }
+  }
+}

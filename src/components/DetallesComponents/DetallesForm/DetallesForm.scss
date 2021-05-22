@@ -1,0 +1,171 @@
+.containerGeneralForm {
+  padding: 0px 90px 30px 90px;
+
+  .containerGeneralForm__titleForm {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.6px;
+    color: #494f66;
+    & span {
+      color: #ef3340;
+    }
+  }
+
+  .containerGeneralForm__subtitleForm {
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    color: #676f8f;
+    margin-bottom: 32px;
+  }
+
+  .containerGeneralForm__boxDetallesForm {
+    display: flex;
+    column-gap: 60px;
+
+    .containerDetallesForm__boxInputs {
+      flex: 0 1 384px;
+
+      .itemInput {
+        margin-bottom: 16px;
+      }
+
+      .inputRadio {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 14px;
+        margin-bottom: 40px;
+
+        span {
+          font-family: Lato;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          letter-spacing: 0.2px;
+          color: #494f66;
+        }
+      }
+    }
+
+    .containerHelp {
+      flex: 0 1 224px;
+
+      .containerHelp__title {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: #494f66;
+      }
+
+      .containerHelp__divider {
+        background: #e4e8f7;
+        opacity: 1;
+        border: none;
+      }
+
+      .containerHelp__boxInfo {
+        .containerHelp__question {
+          width: 128px;
+          display: inline-block;
+          font-family: Lato;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          color: #494f66;
+          margin-right: 32px;
+          margin-top: 10px;
+        }
+
+        .containerHelp__image {
+          vertical-align: top;
+        }
+
+        .containerHelp__link {
+          display: block;
+          font-family: Lato;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 10px;
+          line-height: 16px;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          color: #6f7dff;
+          &:hover {
+            color: #6f7dff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .formDivider {
+    width: 384px;
+
+    .containerHelp__divider {
+      background: #e4e8f7;
+      opacity: 1;
+      border: none;
+    }
+  }
+
+  .containerCounter {
+    display: flex;
+    justify-content: space-between;
+    width: 384px;
+    margin-bottom: 46px;
+
+    .containerCounter__monto {
+      .containetCounter__title {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #494f66;
+      }
+
+      .containerCounter__amountMin {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: #676f8f;
+        padding-right: 8px;
+        border-right: 1px solid #e4e8f7;
+        margin-right: 8px;
+      }
+
+      .containerCounter__amountMax {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: #676f8f;
+      }
+    }
+  }
+}

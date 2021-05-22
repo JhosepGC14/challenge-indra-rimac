@@ -1,0 +1,54 @@
+.boxDetailUser {
+  max-width: 384px;
+  width: 100%;
+  background: #ffffff;
+  border: 3px solid #f0f2fa;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 30px 20px 30px 25px;
+  position: relative;
+
+  .boxDetailUser__placa {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #a3abcc;
+  }
+
+  .boxDetailUser__brand {
+    display: inline-block;
+    width: 192px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #494f66;
+    margin-bottom: 16px;
+  }
+
+  .boxDetailUser__edit {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #6f7dff;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .boxDetailUser__img {
+    position: absolute;
+    right: 0;
+    top: -15px;
+  }
+}

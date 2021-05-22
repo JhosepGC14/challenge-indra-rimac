@@ -1,0 +1,15 @@
+.containerGeneral {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  .containerGeneral__stepper {
+    flex: 1 1 30%;
+    min-height: 100%;
+    background: #f7f8fc;
+  }
+
+  .containerGeneral__Form {
+    flex: 1 1 70%;
+  }
+}
