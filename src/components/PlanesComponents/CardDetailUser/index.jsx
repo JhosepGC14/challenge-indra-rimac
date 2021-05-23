@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./CardDetailUser.scss";
 import BoyRimac from "../../../assets/images/planes/boy_rimac.svg";
 
@@ -11,9 +12,13 @@ const CardDetailUser = ({ dataUser }) => {
       <span className="boxDetailUser__brand">
         {dataUser.brand} {dataUser.year}
       </span>
-      <a className="boxDetailUser__edit" href="#!">
+      <Link
+        to={`/detalle-vehicular/${dataUser.id}`}
+        className="boxDetailUser__edit"
+        href="#!"
+      >
         Editar
-      </a>
+      </Link>
       <img src={BoyRimac} alt="boy rimac" className="boxDetailUser__img" />
     </div>
   );

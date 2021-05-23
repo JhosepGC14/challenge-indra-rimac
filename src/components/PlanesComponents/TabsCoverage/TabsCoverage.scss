@@ -69,6 +69,8 @@
     }
 
     .button_add_remove {
+      cursor: pointer;
+      width: 105px;
       & img {
         margin-right: 12px;
       }
@@ -92,10 +94,12 @@
     align-items: flex-start;
 
     .headerAccordion__notexpanded {
+      cursor: pointer;
       transition: all ease 0.5s;
       transform: rotate(180deg);
     }
     .headerAccordion__expanded {
+      cursor: pointer;
       transition: all ease 0.5s;
       transform: rotate(360deg);
     }
