@@ -1,8 +1,8 @@
 import axios from "axios";
 import RimacError from "../../utils/errors/Rimac";
 
-const URL =  "https://my-json-server.typicode.com/JhosepGC14/challenge-indra-rimac";
-// const URL = "http://localhost:4000";
+// const URL =  "https://my-json-server.typicode.com/JhosepGC14/challenge-indra-rimac";
+const URL = "http://localhost:4000";
 
 const api = axios.create({
   baseURL: URL,
