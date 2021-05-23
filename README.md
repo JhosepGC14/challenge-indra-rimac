@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Reto técnico - Indra Perú - Rimac Seguros
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Repositorio para evaluar conocimientos con la librería ReactJS.
 
-## Available Scripts
+## Instalación
 
-In the project directory, you can run:
+Realizar los siguientes pasos para levantar el proyecto a nivel local:
 
-### `npm start`
+```bash
+git clone https://github.com/JhosepGC14/challenge-indra-rimac.git
+```
+```bash
+git fetch
+```
+```bash
+git checkout develop
+```
+```bash
+npm install
+```
+En una nueva pestaña de la terminal ejecute el siguiente comando:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+json-server --watch db.json --port 4000
+```
+Luego, en otra terminal ejecute el siguiente comando:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm run start
+```
 
-### `npm test`
+## Librerías Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Axios : 
+Esta librería te permite hacer llamadas HTTPS a un servidor ya sea local o externo, se eligío debido a su facilidad de configuración para reutilizar en varios sitios del proyecto.
 
-### `npm run build`
+#### React Boostrap : 
+Es un framework de CSS3 recontruido y orientado netamente para React, ya que cuenta con la disponibilidad de componentes que se pueden reutilizar y personalizar según sea solicitado por el diseño.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### SASS : 
+Se eligío este pre-procesador de CSS debido a la facilidad de uso, reducción del tiempo para crear y mantener estilos CSS. Además, te permite tener una organización modular de los estilos, lo cual es vital para proyectos grandes y escalables.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### React Router DOM: 
+Se eligío esta libreria debido a que es una colección de componentes de navegación la cual podemos usar tanto en Web como Mobile. Con esta librería vamos a obtener un enrutamiento dinámico gracias a los componentes, en otras palabras tenemos unas rutas que renderizan un componente.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Json-Server : 
+Se eligío esta libreria debido a que se puede crear facilmente una API rest fake para poder consumir desde el frontend ya que uno mismo puede construir un servidor con datos falsos para prototipos y simulaciones rapidas.
 
-### `npm run eject`
+## El Reto Dividido en Tareas
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+En este reto, aplique una metología agíl llamada SCRUM, como ya tenia una interfaz visual no hubo necesidad de separarlo en Historias de Usuario. Simplemente divide la interfaz en componentes, para luego por cada componente volverlo una tarea pequeña. Así llegué a tener más claro los objetivos diarios y un numero de horas para realizar cada una de ellas con la finalidad de acabar los requerimientos obligatorios y opcionales del reto.
