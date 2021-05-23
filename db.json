@@ -1,10 +1,41 @@
 {
-  "results":[
+  "results": [
     {
       "id": 1,
       "dni": "70358580",
-      "name": "Jhosep Guadalupe"
+      "name": "Jhosep Guadalupe",
+      "cellphone": "993541937",
+      "licensePlate": "ZLZ-123",
+      "year": "2020",
+      "brand": "4",
+      "typeCar": "1",
+      "amount": 13500
     }
-
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "brand": "Wolkswagen"
+    },
+    {
+      "id": 2,
+      "brand": "BMW"
+    },
+    {
+      "id": 3,
+      "brand": "Mercedes-Benz"
+    },
+    {
+      "id": 4,
+      "brand": "Audi"
+    },
+    {
+      "id": 5,
+      "brand": "Lexus"
+    },
+    {
+      "id": 6,
+      "brand": "Ford"
+    }
   ]
 }

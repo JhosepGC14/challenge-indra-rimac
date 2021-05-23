@@ -148,7 +148,6 @@ const useValidate = () => {
         return "Campos requeridos.";
       }
     }
-    console.log("coordenada validacion : ", reg.test(value));
     if (reg.test(value)) {
       return "Ingresa una coordenada valida.";
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./DetallesForm.scss";
 import ButtonRadio from "../../shared/Buttons/ButtonRadio";
 import ButtonPrimary from "../../shared/Buttons/ButtonPrimary";
@@ -10,15 +10,19 @@ import {
   detallesForm,
   detallesFormValidation,
 } from "../../../widgets/detalles/store/state";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import ButtonBack from "../../shared/Buttons/ButtonBack";
+import RimacApi from "../../../infrastructure/services/RimacServices";
+import ComboServices from "../../../infrastructure/services/ComboServices";
 
 const DetallesForm = () => {
   //validations
   const { validated } = useValidate();
   const router = useHistory();
+  const params = useParams();
 
   const [formDetailCar, setFormDetailCar] = useState(detallesForm);
+  const [userName, setUserName] = useState("");
   const [errors, setErrors] = useState(formDetailCar);
 
   // eslint-disable-next-line
@@ -33,16 +37,7 @@ const DetallesForm = () => {
     },
   ]);
   // eslint-disable-next-line
-  const [brand, setBrand] = useState([
-    {
-      text: "Mazda",
-      value: "1",
-    },
-    {
-      text: "Toyota",
-      value: "2",
-    },
-  ]);
+  const [brand, setBrand] = useState([]);
   // eslint-disable-next-line
   const [year, setYear] = useState([
     {
@@ -56,34 +51,82 @@ const DetallesForm = () => {
   ]);
 
   const handleChange = ({ name, value }) => {
-    console.log(name);
-    console.log(value);
     setFormDetailCar({
       ...formDetailCar,
       [name]: value,
     });
   };
 
-  console.log(formDetailCar);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("se ejecuto form");
     const errorDetallesForm = validated(formDetailCar, detallesFormValidation);
-    console.log(errorDetallesForm);
     setErrors(errorDetallesForm);
     if (!Object.keys(errorDetallesForm).length > 0) {
-      console.log(formDetailCar);
-      router.push("/planes-cobertura");
+      updateDataUserById(params?.id);
+    }
+  };
+
+  const updateDataUserById = async (id) => {
+    try {
+      let response = await RimacApi.updateDataById(id, formDetailCar);
+      router.push(`/planes-cobertura/${params.id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (params.id) {
+      getUserById(params.id);
+    }
+  }, []);
+
+  useEffect(() => {
+    getAllBrands();
+  }, []);
+
+  const getAllBrands = async () => {
+    try {
+      let allBrands = await ComboServices.getAllBrands();
+      let mutableList = await allBrands.map((item) => {
+        return {
+          value: item.id,
+          text: item.brand,
+        };
+      });
+      setBrand(mutableList);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getUserById = async (id) => {
+    try {
+      let response = await RimacApi.getDataUserById(id);
+      if (response) {
+        setFormDetailCar({
+          year: response.year || "",
+          brand: response.brand || "",
+          typeCar: response.typeCar || "",
+          amount: response.amount || 12500,
+        });
+        setUserName(response.name);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
   return (
     <div className="containerGeneralForm">
       <form onSubmit={handleSubmit}>
-        <ButtonBack />
+        <ButtonBack
+          onClick={() => {
+            router.push("/");
+          }}
+        />
         <h2 className="containerGeneralForm__titleForm">
-          ¡Hola, <span>Juan!</span>
+          ¡Hola, <span>{userName}!</span>
         </h2>
         <span className="containerGeneralForm__subtitleForm">
           Completa los datos de tu auto
