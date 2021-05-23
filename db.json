@@ -6,10 +6,47 @@
       "name": "Jhosep Guadalupe",
       "cellphone": "993541937",
       "licensePlate": "ZLZ-123",
-      "year": "2020",
-      "brand": "4",
+      "year": "2019",
+      "brand": "3",
       "typeCar": "1",
-      "amount": 13500
+      "amount": 14800,
+      "plans": [
+        {
+          "id": 1,
+          "nameItem": "Llanta de respuesto"
+        },
+        {
+          "id": 2,
+          "nameItem": "Analisis de motor"
+        },
+        {
+          "id": 3,
+          "nameItem": "Aros gratis"
+        }
+      ],
+      "totalMount": 105
+    },
+    {
+      "id": 2,
+      "dni": "08642017",
+      "name": "Estefania",
+      "cellphone": "993541931",
+      "licensePlate": "ZLZ-122",
+      "year": "2020",
+      "brand": "6",
+      "typeCar": "1",
+      "amount": 13100,
+      "plans": [
+        {
+          "id": 1,
+          "nameItem": "Llanta de respuesto"
+        },
+        {
+          "id": 2,
+          "nameItem": "Analisis de motor"
+        }
+      ],
+      "totalMount": 55
     }
   ],
   "brands": [

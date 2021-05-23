@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Planes.scss";
 import CardDetailUser from "../CardDetailUser";
@@ -11,7 +11,44 @@ import ComboServices from "../../../infrastructure/services/ComboServices";
 
 const PlanesForm = () => {
   const params = useParams();
+  const router = useHistory();
+
   const [dataUser, setdataUser] = useState({});
+  const [initialAmount, setInitialAmount] = useState(20);
+  const [PlanForm, setPlanForm] = useState([]);
+  const [PlanesAvaliable, setPlanesAvaliable] = useState([
+    {
+      id: 1,
+      nameItem: "Llanta de respuesto",
+    },
+    {
+      id: 2,
+      nameItem: "Analisis de motor",
+    },
+    {
+      id: 3,
+      nameItem: "Aros gratis",
+    },
+  ]);
+
+  const handleAddPlan = (amount) => {
+    console.log(amount);
+    setInitialAmount(initialAmount + amount);
+  };
+
+  const handleRemovePlan = (amount) => {
+    setInitialAmount(initialAmount - amount);
+  };
+
+  const addItemToPlanList = (plan) => {
+    let [newList] = PlanesAvaliable.filter((item) => item.id === plan);
+    setPlanForm([...PlanForm, newList]);
+  };
+
+  const removeItemToPlanList = (plan) => {
+    let newList = PlanForm.filter((item) => item.id !== plan);
+    setPlanForm(newList);
+  };
 
   useEffect(() => {
     if (params.id) {
@@ -36,11 +73,31 @@ const PlanesForm = () => {
     }
   };
 
+  const handleSendPlansAndAmount = async () => {
+    try {
+      let body = {
+        plans: PlanForm,
+        totalMount: initialAmount,
+      };
+      let response = await RimacApi.updateDataById(params.id, body);
+      console.log("fue actualizado correctamente", response);
+      if (response) {
+        router.push("/despedida");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Container className="containerGeneralPlans">
       <Row>
-        <Col sm={12} md={6}>
-          <ButtonBack />
+        <Col sm={12} md={12} lg={6}>
+          <ButtonBack
+            onClick={() => {
+              router.push(`/detalle-vehicular/${params.id}`);
+            }}
+          />
           <h1 className="containerGeneralPlans__title">Mira las coberturas</h1>
           <span className="containerGeneralPlans__subtitle">
             Conoce las coberturas para tu plan
@@ -49,11 +106,20 @@ const PlanesForm = () => {
             <CardDetailUser dataUser={dataUser} />
           </div>
           <div className="boxTabs">
-            <TabsCoverage />
+            <TabsCoverage
+              handleAddPlan={handleAddPlan}
+              handleRemovePlan={handleRemovePlan}
+              addListItem={addItemToPlanList}
+              removeListItem={removeItemToPlanList}
+            />
           </div>
         </Col>
-        <Col sm={12} md={4}>
-          <TotalPrice />
+        <Col sm={12} md={12} lg={4}>
+          <TotalPrice
+            listItems={PlanForm}
+            amount={initialAmount}
+            handleSendPlansAndAmount={handleSendPlansAndAmount}
+          />
         </Col>
       </Row>
     </Container>
