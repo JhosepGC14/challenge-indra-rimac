@@ -1,0 +1,53 @@
+.boxBackground {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f8fc;
+  position: relative;
+
+  .boxBackground__img {
+    position: absolute;
+    right: -20%;
+    bottom: 24%;
+  }
+}
+
+.containerWelcome {
+  max-width: 480px;
+  width: 100%;
+  min-height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .containerWelcome__title {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: -0.2px;
+    color: #494f66;
+    margin-bottom: 16px;
+    & span {
+      display: block;
+      color: #ef3340 !important;
+    }
+  }
+
+  .containerWelcome__description {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    color: #676f8f;
+    & span {
+      font-weight: 400;
+    }
+  }
+
+  .containerWelcome__boxBtn {
+    width: 255px;
+  }
+}

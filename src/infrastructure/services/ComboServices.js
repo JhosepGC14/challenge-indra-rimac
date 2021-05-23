@@ -1,4 +1,4 @@
-import { callApiAxios, getQuery } from "../api/RimacApi";
+import { callApiAxios } from "../api/RimacApi";
 import * as ConstantApi from "../api/Constants";
 
 const ComboServices = {
