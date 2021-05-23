@@ -68,7 +68,7 @@ const DetallesForm = () => {
 
   const updateDataUserById = async (id) => {
     try {
-      let response = await RimacApi.updateDataById(id, formDetailCar);
+      await RimacApi.updateDataById(id, formDetailCar);
       router.push(`/planes-cobertura/${params.id}`);
     } catch (error) {
       console.log(error);
@@ -79,7 +79,7 @@ const DetallesForm = () => {
     if (params.id) {
       getUserById(params.id);
     }
-  }, []);
+  }, [params.id]);
 
   useEffect(() => {
     getAllBrands();

@@ -6,10 +6,10 @@
       "name": "Jhosep Guadalupe",
       "cellphone": "993541937",
       "licensePlate": "ZLZ-123",
-      "year": "2019",
-      "brand": "3",
+      "year": "2020",
+      "brand": "4",
       "typeCar": "1",
-      "amount": 14800,
+      "amount": 15300,
       "plans": [
         {
           "id": 1,
@@ -18,13 +18,9 @@
         {
           "id": 2,
           "nameItem": "Analisis de motor"
-        },
-        {
-          "id": 3,
-          "nameItem": "Aros gratis"
         }
       ],
-      "totalMount": 105
+      "totalMount": 55
     },
     {
       "id": 2,

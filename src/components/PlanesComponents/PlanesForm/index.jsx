@@ -16,6 +16,7 @@ const PlanesForm = () => {
   const [dataUser, setdataUser] = useState({});
   const [initialAmount, setInitialAmount] = useState(20);
   const [PlanForm, setPlanForm] = useState([]);
+  // eslint-disable-next-line
   const [PlanesAvaliable, setPlanesAvaliable] = useState([
     {
       id: 1,
@@ -54,7 +55,7 @@ const PlanesForm = () => {
     if (params.id) {
       getUserById(params.id);
     }
-  }, []);
+  }, [params.id]);
 
   const getUserById = async (id) => {
     try {
