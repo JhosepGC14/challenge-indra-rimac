@@ -43,6 +43,19 @@
         }
       ],
       "totalMount": 55
+    },
+    {
+      "id": 3,
+      "dni": "44748193",
+      "name": "Diego",
+      "cellphone": "993541930",
+      "licensePlate": "ZLZ-121",
+      "year": "",
+      "brand": "",
+      "typeCar": "",
+      "amount": 12500,
+      "plans": [],
+      "totalMount": 20
     }
   ],
   "brands": [
