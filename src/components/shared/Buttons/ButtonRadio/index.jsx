@@ -14,6 +14,7 @@ const ButtonRadio = ({ options = [], name, onChange, errors }) => {
           return (
             <Form.Check
               // isInvalid={errors[name] ? true : false}
+              required
               key={index}
               inline
               label={item.text}

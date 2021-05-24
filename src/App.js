@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 //components
 import HomePage from "./pages/home";
@@ -14,9 +19,16 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/detalle-vehicular/:id" component={DetalleVehicularPage} />
+          <Route
+            exact
+            path="/detalle-vehicular/:id"
+            component={DetalleVehicularPage}
+          />
           <Route exact path="/planes-cobertura/:id" component={PlanesPage} />
           <Route exact path="/despedida" component={DespedidaPage} />
+          <Route exact path="*">
+            <Redirect to="/" />
+          </Route>
         </Switch>
       </Router>
     </>

@@ -22,7 +22,7 @@ const InputSelect = ({
           value={value}
           onChange={handleChange}
         >
-          <option defaultValue="">Seleccione una opción</option>
+          <option value="">Seleccione una opción</option>
           {options.map((item, index) => {
             return (
               <option key={index} id={item.text} value={item.value}>

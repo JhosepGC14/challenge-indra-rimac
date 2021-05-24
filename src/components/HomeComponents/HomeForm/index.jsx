@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Alert, Form } from "react-bootstrap";
 import "./HomeForm.scss";
 
 import {
@@ -14,10 +14,15 @@ import { useHistory } from "react-router-dom";
 import RimacApi from "../../../infrastructure/services/RimacServices";
 
 const HomeForm = () => {
+  const router = useHistory();
   //validations
   const { validated } = useValidate();
   const [formStateHome, setFormStateHome] = useState(FormHome);
   const [errors, setErrors] = useState(FormHome);
+  const [alertForm, setAlertForm] = useState({
+    show: false,
+    text: "",
+  });
   //eslint-disable-next-line
   const [options, setOptions] = useState([
     {
@@ -27,8 +32,6 @@ const HomeForm = () => {
       name: "RUC",
     },
   ]);
-
-  const router = useHistory();
 
   const handleChange = ({ name, value }) => {
     setFormStateHome({
@@ -53,6 +56,10 @@ const HomeForm = () => {
         router.push(`/detalle-vehicular/${response[0].id}`);
       } else {
         //TODO que hacer cuando no está registrado?
+        setAlertForm({
+          show: true,
+          text: "No se ha encontrado usuario con la información brindada. Intentar nuevamente.",
+        });
       }
     } catch (error) {
       console.log(error);
@@ -107,6 +114,11 @@ const HomeForm = () => {
         </div>
         <ButtonPrimary variant="secondary" content="COTÍZALO" type="submit" />
       </form>
+      {alertForm.show && (
+        <Alert className="mt-4 text-center" variant="danger">
+          {alertForm.text}
+        </Alert>
+      )}
     </div>
   );
 };
